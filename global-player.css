@@ -1,0 +1,315 @@
+/**
+ * Global Spotify-style Audio Player
+ * Matches cyberpunk aesthetic from main styles.css
+ */
+
+.global-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg,
+        rgba(19, 19, 26, 0.95) 0%,
+        rgba(19, 19, 26, 0.98) 100%);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(96, 165, 250, 0.2);
+    padding: 1rem 2rem;
+    z-index: 1000;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.global-player.hidden {
+    transform: translateY(100%);
+}
+
+.player-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Song Info Section */
+.player-song-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0; /* Allow text truncation */
+}
+
+.player-album-art {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(167, 139, 250, 0.3);
+}
+
+.player-text {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.player-song-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.25rem;
+}
+
+.player-song-artist {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Controls Section */
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.player-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-btn:hover {
+    color: var(--text-primary);
+    background: rgba(96, 165, 250, 0.1);
+    transform: scale(1.05);
+}
+
+.player-btn:active {
+    transform: scale(0.95);
+}
+
+.player-play-pause {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    color: white;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
+}
+
+.player-play-pause:hover {
+    box-shadow: 0 6px 16px rgba(96, 165, 250, 0.6);
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+}
+
+/* Progress Section */
+.player-progress-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.player-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    min-width: 40px;
+    text-align: center;
+}
+
+.player-progress-bar {
+    flex: 1;
+    max-width: 500px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.player-progress-bg {
+    width: 100%;
+    height: 4px;
+    background: rgba(100, 100, 120, 0.2);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    transition: height 0.2s ease;
+}
+
+.player-progress-bar:hover .player-progress-bg {
+    height: 6px;
+}
+
+.player-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.6);
+}
+
+/* Volume Section */
+.player-volume {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 140px;
+    justify-content: flex-end;
+}
+
+.player-volume-btn {
+    flex-shrink: 0;
+}
+
+.player-volume-slider {
+    width: 80px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.player-volume-bg {
+    width: 100%;
+    height: 4px;
+    background: rgba(100, 100, 120, 0.2);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    transition: height 0.2s ease;
+}
+
+.player-volume-slider:hover .player-volume-bg {
+    height: 6px;
+}
+
+.player-volume-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
+    border-radius: 2px;
+    width: 70%;
+    transition: width 0.1s ease;
+    box-shadow: 0 0 8px rgba(167, 139, 250, 0.6);
+}
+
+/* Playing state */
+.global-player.playing .player-album-art {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(167, 139, 250, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(167, 139, 250, 0.6);
+    }
+}
+
+/* Song card highlighting */
+.song-card.playing {
+    border-color: var(--accent-purple);
+    box-shadow: 0 4px 20px rgba(167, 139, 250, 0.3);
+}
+
+.song-card.playing .song-header h2 {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .player-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .player-progress-section {
+        order: -1;
+        justify-content: stretch;
+    }
+
+    .player-progress-bar {
+        max-width: none;
+    }
+
+    .player-controls {
+        order: 0;
+    }
+
+    .player-volume {
+        justify-content: center;
+        order: 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .global-player {
+        padding: 0.75rem 1rem;
+    }
+
+    .player-content {
+        gap: 0.75rem;
+    }
+
+    .player-song-info {
+        gap: 0.75rem;
+    }
+
+    .player-album-art {
+        width: 40px;
+        height: 40px;
+    }
+
+    .player-song-title {
+        font-size: 0.85rem;
+    }
+
+    .player-song-artist {
+        font-size: 0.75rem;
+    }
+
+    .player-controls {
+        gap: 0.75rem;
+    }
+
+    .player-volume-slider {
+        width: 60px;
+    }
+}
+
+/* Add bottom padding to main content to account for fixed player */
+body {
+    padding-bottom: 100px;
+}
+
+@media (max-width: 1024px) {
+    body {
+        padding-bottom: 160px;
+    }
+}
