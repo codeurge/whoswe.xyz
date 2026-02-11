@@ -52,7 +52,7 @@ class GlobalAudioPlayer {
                         </button>
                         <button class="player-btn player-next" title="Next">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+                                <path d="M6 6h2v12H6zm4 0v12l8.5-6z"/>
                             </svg>
                         </button>
                     </div>
