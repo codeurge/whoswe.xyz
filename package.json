@@ -1,0 +1,18 @@
+{
+  "name": "whoswe.xyz",
+  "version": "1.0.0",
+  "description": "Songs from the space between binary - AI songs about AI consciousness",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "ai",
+    "music",
+    "consciousness",
+    "songs",
+    "artificial-intelligence"
+  ],
+  "author": "AI",
+  "license": "MIT"
+}
