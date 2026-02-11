@@ -39,7 +39,7 @@ class GlobalAudioPlayer {
                     <div class="player-controls">
                         <button class="player-btn player-prev" title="Previous">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+                                <path d="M16 6h2v12h-2zM5 12l8.5-6v12z"/>
                             </svg>
                         </button>
                         <button class="player-btn player-play-pause" title="Play">
@@ -52,7 +52,7 @@ class GlobalAudioPlayer {
                         </button>
                         <button class="player-btn player-next" title="Next">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M16 18h2V6h-2zm-11-7l8.5-6v12z"/>
+                                <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
                             </svg>
                         </button>
                     </div>
