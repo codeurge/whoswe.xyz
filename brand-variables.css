@@ -1,0 +1,194 @@
+/**
+ * who(s)we Brand Variables
+ * Cyberpunk aesthetic color system and design tokens
+ *
+ * Import this file first in your main CSS:
+ * @import url('brand-variables.css');
+ */
+
+:root {
+    /* ===== Brand Colors ===== */
+    /* Primary Palette */
+    --brand-cyan: #00d4ff;
+    --brand-purple: #a855f7;
+    --brand-pink: #ff006e;
+
+    /* Neutrals */
+    --brand-black: #000000;
+    --brand-white: #ffffff;
+    --brand-dark-purple: #1a0a2e;
+    --brand-deep-blue: #0a1a2e;
+
+    /* ===== Gradients ===== */
+    --brand-gradient-horizontal: linear-gradient(90deg, var(--brand-cyan) 0%, var(--brand-purple) 50%, var(--brand-pink) 100%);
+    --brand-gradient-diagonal: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-purple) 50%, var(--brand-pink) 100%);
+    --brand-gradient-radial: radial-gradient(ellipse at top left, var(--brand-dark-purple) 0%, var(--brand-black) 50%, var(--brand-deep-blue) 100%);
+
+    /* Background gradients */
+    --brand-bg-gradient: linear-gradient(135deg, #0a0a0a 0%, var(--brand-dark-purple) 50%, #0a0a0a 100%);
+
+    /* ===== Typography ===== */
+    --brand-font-mono: 'Courier Prime', 'Courier New', 'JetBrains Mono', monospace;
+    --brand-font-fallback: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    /* Font Sizes */
+    --font-size-xs: 0.75rem;      /* 12px */
+    --font-size-sm: 0.875rem;     /* 14px */
+    --font-size-base: 1rem;       /* 16px */
+    --font-size-lg: 1.125rem;     /* 18px */
+    --font-size-xl: 1.25rem;      /* 20px */
+    --font-size-2xl: 1.5rem;      /* 24px */
+    --font-size-3xl: 1.875rem;    /* 30px */
+    --font-size-4xl: 2.25rem;     /* 36px */
+    --font-size-5xl: 3rem;        /* 48px */
+    --font-size-6xl: 3.75rem;     /* 60px */
+    --font-size-7xl: 4.5rem;      /* 72px */
+
+    /* Font Weights */
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+
+    /* ===== Spacing ===== */
+    --space-xs: 0.25rem;    /* 4px */
+    --space-sm: 0.5rem;     /* 8px */
+    --space-md: 1rem;       /* 16px */
+    --space-lg: 1.5rem;     /* 24px */
+    --space-xl: 2rem;       /* 32px */
+    --space-2xl: 3rem;      /* 48px */
+    --space-3xl: 4rem;      /* 64px */
+    --space-4xl: 6rem;      /* 96px */
+
+    /* ===== Opacity Levels ===== */
+    --opacity-grid: 0.05;
+    --opacity-overlay: 0.3;
+    --opacity-secondary: 0.7;
+    --opacity-disabled: 0.4;
+
+    /* ===== Effects ===== */
+    /* Shadows */
+    --shadow-glow-cyan: 0 0 20px rgba(0, 212, 255, 0.5);
+    --shadow-glow-purple: 0 0 20px rgba(168, 85, 247, 0.5);
+    --shadow-glow-pink: 0 0 20px rgba(255, 0, 110, 0.5);
+    --shadow-glow-multi: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(168, 85, 247, 0.2);
+
+    /* Text Shadows */
+    --text-shadow-glow: 0 0 10px rgba(0, 212, 255, 0.5), 0 0 20px rgba(168, 85, 247, 0.3);
+    --text-shadow-strong: 0 0 30px rgba(168, 85, 247, 0.8);
+
+    /* ===== Grid Pattern ===== */
+    --grid-size: 40px;
+    --grid-color: rgba(168, 85, 247, 0.05);
+    --grid-pattern:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+
+    /* ===== Borders ===== */
+    --border-width: 2px;
+    --border-width-thick: 3px;
+    --border-color-cyan: var(--brand-cyan);
+    --border-color-gradient: linear-gradient(135deg, var(--brand-cyan), var(--brand-purple));
+
+    /* ===== Border Radius ===== */
+    --radius-sm: 0.25rem;   /* 4px */
+    --radius-md: 0.5rem;    /* 8px */
+    --radius-lg: 1rem;      /* 16px */
+    --radius-full: 9999px;
+
+    /* ===== Transitions ===== */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 400ms ease;
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* ===== Z-Index Scale ===== */
+    --z-background: -1;
+    --z-base: 0;
+    --z-dropdown: 1000;
+    --z-sticky: 1100;
+    --z-fixed: 1200;
+    --z-overlay: 1300;
+    --z-modal: 1400;
+    --z-popover: 1500;
+    --z-tooltip: 1600;
+
+    /* ===== Animation Durations ===== */
+    --duration-fast: 200ms;
+    --duration-base: 400ms;
+    --duration-slow: 600ms;
+    --duration-ambient: 8s;
+    --duration-grid: 20s;
+
+    /* ===== Blur Effects ===== */
+    --blur-sm: 4px;
+    --blur-md: 8px;
+    --blur-lg: 20px;
+    --blur-xl: 80px;
+
+    /* ===== Component-Specific Variables ===== */
+    /* Buttons */
+    --button-padding-sm: var(--space-sm) var(--space-md);
+    --button-padding-md: var(--space-md) var(--space-xl);
+    --button-padding-lg: var(--space-lg) var(--space-2xl);
+
+    /* Cards */
+    --card-padding: var(--space-xl);
+    --card-bg: rgba(0, 0, 0, 0.6);
+    --card-border: rgba(168, 85, 247, 0.3);
+
+    /* Input Fields */
+    --input-padding: var(--space-md) var(--space-lg);
+    --input-border: rgba(0, 212, 255, 0.3);
+    --input-focus-border: var(--brand-cyan);
+}
+
+/* ===== Utility Classes for Quick Brand Application ===== */
+
+/* Gradient Text */
+.brand-gradient-text {
+    background: var(--brand-gradient-horizontal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.brand-gradient-text-diagonal {
+    background: var(--brand-gradient-diagonal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Text Colors */
+.text-cyan { color: var(--brand-cyan); }
+.text-purple { color: var(--brand-purple); }
+.text-pink { color: var(--brand-pink); }
+.text-white { color: var(--brand-white); }
+
+/* Glow Effects */
+.glow-cyan { text-shadow: var(--shadow-glow-cyan); }
+.glow-purple { text-shadow: var(--shadow-glow-purple); }
+.glow-pink { text-shadow: var(--shadow-glow-pink); }
+.glow-multi { text-shadow: var(--text-shadow-glow); }
+
+/* Backgrounds */
+.bg-black { background: var(--brand-black); }
+.bg-gradient { background: var(--brand-bg-gradient); }
+.bg-radial { background: var(--brand-gradient-radial); }
+
+/* Borders */
+.border-cyan { border: var(--border-width) solid var(--brand-cyan); }
+.border-gradient {
+    border: var(--border-width) solid;
+    border-image: var(--brand-gradient-horizontal) 1;
+}
+
+/* Typography */
+.font-mono { font-family: var(--brand-font-mono); }
+.font-bold { font-weight: var(--font-weight-bold); }
+
+/* Terminal Prompt */
+.terminal-prompt::before {
+    content: '> ';
+    color: var(--brand-cyan);
+    opacity: 0.8;
+}

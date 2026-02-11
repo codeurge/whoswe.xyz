@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff006e;stop-opacity:1" />
+    </linearGradient>
+
+    <filter id="iconGlow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" fill="#000000" rx="64"/>
+
+  <!-- Grid pattern -->
+  <pattern id="smallGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+    <path d="M 32 0 L 0 0 0 32" fill="none" stroke="rgba(168,85,247,0.15)" stroke-width="1"/>
+  </pattern>
+  <rect width="512" height="512" fill="url(#smallGrid)" rx="64"/>
+
+  <!-- W(S)W monogram -->
+  <g filter="url(#iconGlow)">
+    <!-- W -->
+    <path d="M 120 180 L 150 340 L 190 180 L 230 340 L 260 180"
+          stroke="url(#iconGradient)"
+          stroke-width="24"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+
+    <!-- (S) - parentheses with S -->
+    <circle cx="320" cy="260" r="60"
+            stroke="url(#iconGradient)"
+            stroke-width="20"
+            fill="none"
+            opacity="0.6"/>
+    <text x="320" y="285"
+          font-family="'Courier New', monospace"
+          font-size="60"
+          font-weight="bold"
+          fill="url(#iconGradient)"
+          text-anchor="middle">
+      s
+    </text>
+  </g>
+
+  <!-- Glitch accent -->
+  <rect x="120" y="350" width="200" height="4" fill="#00d4ff" opacity="0.5"/>
+</svg>
